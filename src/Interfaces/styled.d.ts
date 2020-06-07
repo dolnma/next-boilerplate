@@ -1,11 +1,14 @@
 // #region Global Imports
-import "styled-components";
+import 'styled-components'
 // #endregion Global Imports
 
-declare module "styled-components" {
+declare module 'styled-components' {
     export interface DefaultTheme {
         colors: {
-            primary: string;
-        };
+            primary: string
+            secondary: string
+            third: string
+            fourth: string
+        }
     }
 }

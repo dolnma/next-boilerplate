@@ -1,21 +1,24 @@
 // #region Local Imports
-import { ActionConsts } from "@Definitions";
+import { ActionConsts } from '@Definitions'
 // #endregion Local Imports
 
 // #region Interface Imports
-import { IAction, IHomePage } from "@Interfaces";
+import { IAction, IHomePage } from '@Interfaces'
 // #endregion Interface Imports
 
 const INITIAL_STATE: IHomePage.IStateProps = {
     home: {
         version: 1,
     },
-    image: {
-        url: "",
+    nevim: {
+        bomba: 'ahoj',
     },
-};
+    image: {
+        url: '',
+    },
+}
 
-type IMapPayload = IHomePage.Actions.IMapPayload;
+type IMapPayload = IHomePage.Actions.IMapPayload
 
 export const HomeReducer = (
     state = INITIAL_STATE,
@@ -26,12 +29,12 @@ export const HomeReducer = (
             return {
                 ...state,
                 ...action.payload,
-            };
+            }
 
         case ActionConsts.Home.ResetReducer:
-            return INITIAL_STATE;
+            return INITIAL_STATE
 
         default:
-            return state;
+            return state
     }
-};
+}

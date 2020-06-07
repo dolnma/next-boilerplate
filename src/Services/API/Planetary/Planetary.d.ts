@@ -1,13 +1,13 @@
 // #region Interface Imports
-import { ApodPayload, ApodResponse } from "@Interfaces";
+import { ApodPayload, ApodResponse } from '@Interfaces'
 // #endregion Interface Imports
 
 declare namespace PlanetaryModel {
     export interface GetApodPayload {
-        params: ApodPayload;
+        params: ApodPayload
     }
 
     export interface GetApodResponse extends ApodResponse {}
 }
 
-export { PlanetaryModel };
+export { PlanetaryModel }

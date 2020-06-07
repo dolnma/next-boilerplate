@@ -1,19 +1,19 @@
 // #region Local Imports
-import { PlanetaryService } from "@Services";
+import { PlanetaryService } from '@Services'
 // #endregion Local Imports
 
-describe("Planetary Service tests", () => {
-    test("200 test", async () => {
+describe('Planetary Service tests', () => {
+    test('200 test', async () => {
         const result = await PlanetaryService.GetPlanetImage({
             params: { hd: true },
-        });
-        expect(result.copyright).toEqual("Pankod");
-    });
+        })
+        expect(result.copyright).toEqual('Pankod')
+    })
 
-    test("500 test", async () => {
+    test('500 test', async () => {
         const result = await PlanetaryService.GetPlanetImage({
             params: { hd: false },
-        });
-        expect(result.copyright).toEqual("");
-    });
-});
+        })
+        expect(result.copyright).toEqual('')
+    })
+})

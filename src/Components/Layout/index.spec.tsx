@@ -1,16 +1,16 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { render } from "@Test/utils";
-import { Layout } from "@Components";
+import { render } from '@Test/utils'
+import { Layout } from '@Components'
 
-describe("Layout", () => {
-    it("should render without fail", () => {
+describe('Layout', () => {
+    it('should render without fail', () => {
         const { container } = render(
             <Layout>
                 <div>Content</div>
             </Layout>
-        );
+        )
 
-        expect(container).toMatchSnapshot();
-    });
-});
+        expect(container).toMatchSnapshot()
+    })
+})

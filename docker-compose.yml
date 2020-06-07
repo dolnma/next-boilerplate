@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+    node:
+        build:
+            context: .
+        container_name: node
+        restart: always

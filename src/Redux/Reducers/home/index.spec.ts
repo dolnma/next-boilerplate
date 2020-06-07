@@ -1,11 +1,11 @@
 // #region Local Imports
-import { IAction, IHomePage } from "@Interfaces";
-import { ActionConsts } from "@Definitions";
-import { HomeReducer } from ".";
+import { IAction, IHomePage } from '@Interfaces'
+import { ActionConsts } from '@Definitions'
+import { HomeReducer } from '.'
 // #endregion Local Imports
 
-describe("home reducer", () => {
-    it("should return the initial state", () => {
+describe('home reducer', () => {
+    it('should return the initial state', () => {
         expect(
             HomeReducer(undefined, {} as IAction<IHomePage.Actions.IMapPayload>)
         ).toEqual({
@@ -13,12 +13,12 @@ describe("home reducer", () => {
                 version: 1,
             },
             image: {
-                url: "",
+                url: '',
             },
-        });
-    });
+        })
+    })
 
-    it("should handle SetReducer", () => {
+    it('should handle SetReducer', () => {
         expect(
             HomeReducer([], {
                 type: ActionConsts.Home.SetReducer,
@@ -28,10 +28,10 @@ describe("home reducer", () => {
             })
         ).toEqual({
             version: 2,
-        });
-    });
+        })
+    })
 
-    it("should handle ResetReducer", () => {
+    it('should handle ResetReducer', () => {
         expect(
             HomeReducer(undefined, {
                 type: ActionConsts.Home.ResetReducer,
@@ -41,8 +41,8 @@ describe("home reducer", () => {
                 version: 1,
             },
             image: {
-                url: "",
+                url: '',
             },
-        });
-    });
-});
+        })
+    })
+})

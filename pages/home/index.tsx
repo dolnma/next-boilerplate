@@ -1,11 +1,11 @@
 // #region Global Imports
-import * as React from "react";
-import { NextPage } from "next";
-import { useSelector, useDispatch } from "react-redux";
+import * as React from 'react'
+import { NextPage } from 'next'
+import { useSelector, useDispatch } from 'react-redux'
 // #endregion Global Imports
 
 // #region Local Imports
-import { withTranslation } from "@Server/i18n";
+import { withTranslation } from '@Server/i18n'
 import {
     Container,
     Top,
@@ -16,35 +16,36 @@ import {
     MiddleRight,
     Apod,
     ApodButton,
-} from "@Styled/Home";
-import { IStore } from "@Redux/IStore";
-import { HomeActions } from "@Actions";
-import { Heading, LocaleButton } from "@Components";
+} from '@Styled/Home'
+import { IStore } from '@Redux/IStore'
+import { HomeActions } from '@Actions'
+import { Heading, LocaleButton, Navbar } from '@Components'
 // #endregion Local Imports
 
 // #region Interface Imports
-import { IHomePage, ReduxNextPageContext } from "@Interfaces";
+import { IHomePage, ReduxNextPageContext } from '@Interfaces'
 // #endregion Interface Imports
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
     i18n,
 }) => {
-    const home = useSelector((state: IStore) => state.home);
-    const dispatch = useDispatch();
+    const home = useSelector((state: IStore) => state.home)
+    const dispatch = useDispatch()
 
     const renderLocaleButtons = (activeLanguage: string) =>
-        ["en", "es", "tr"].map(lang => (
+        ['en', 'es', 'tr'].map(lang => (
             <LocaleButton
                 key={lang}
                 lang={lang}
                 isActive={activeLanguage === lang}
                 onClick={() => i18n.changeLanguage(lang)}
             />
-        ));
+        ))
 
     return (
         <Container>
+            <Navbar />
             <Top>
                 <img src="/images/pankod-logo.png" alt="Pankod Logo" />
             </Top>
@@ -55,8 +56,8 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     </MiddleLeftButtons>
                 </MiddleLeft>
                 <MiddleRight>
-                    <TopText>{t("common:Hello")}</TopText>
-                    <Heading text={t("common:World")} />
+                    <TopText>{t('common:Hello')}</TopText>
+                    <Heading text={t('common:World')} />
                     <Apod>
                         <ApodButton
                             onClick={() => {
@@ -64,7 +65,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                                     HomeActions.GetApod({
                                         params: { hd: false },
                                     })
-                                );
+                                )
                             }}
                         >
                             Discover Space
@@ -79,20 +80,21 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                 </MiddleRight>
             </Middle>
         </Container>
-    );
-};
+    )
+}
 
 Home.getInitialProps = async (
     ctx: ReduxNextPageContext
 ): Promise<IHomePage.InitialProps> => {
+    console.log(ctx.store.getState())
     await ctx.store.dispatch(
         HomeActions.GetApod({
             params: { hd: true },
         })
-    );
-    return { namespacesRequired: ["common"] };
-};
+    )
+    return { namespacesRequired: ['common'] }
+}
 
-const Extended = withTranslation("common")(Home);
+const Extended = withTranslation('common')(Home)
 
-export default Extended;
+export default Extended

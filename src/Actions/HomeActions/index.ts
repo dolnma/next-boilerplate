@@ -1,14 +1,14 @@
 // #region Global Imports
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux'
 // #endregion Global Imports
 
 // #region Local Imports
-import { ActionConsts } from "@Definitions";
-import { PlanetaryService } from "@Services";
+import { ActionConsts } from '@Definitions'
+import { PlanetaryService } from '@Services'
 // #endregion Local Imports
 
 // #region Interface Imports
-import { IHomePage } from "@Interfaces";
+import { IHomePage } from '@Interfaces'
 // #endregion Interface Imports
 
 export const HomeActions = {
@@ -26,13 +26,13 @@ export const HomeActions = {
     ) => {
         const result = await PlanetaryService.GetPlanetImage({
             params: payload.params,
-        });
+        })
 
         dispatch({
             payload: {
                 image: result,
             },
             type: ActionConsts.Home.SetReducer,
-        });
+        })
     },
-};
+}

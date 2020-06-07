@@ -1,21 +1,24 @@
 // #region Global Imports
-import { WithTranslation } from "next-i18next";
+import { WithTranslation } from 'next-i18next'
 // #endregion Global Imports
 
 declare namespace IHomePage {
     export interface IProps extends WithTranslation {}
 
     export interface InitialProps {
-        namespacesRequired: string[];
+        namespacesRequired: string[]
     }
 
     export interface IStateProps {
         home: {
-            version: number;
-        };
+            version: number
+        }
+        nevim: {
+            bomba: String
+        }
         image: {
-            url: string;
-        };
+            url: string
+        }
     }
 
     namespace Actions {
@@ -24,7 +27,7 @@ declare namespace IHomePage {
         export interface IMapResponse {}
 
         export interface IGetApodPayload extends PlanetaryModel.GetApodPayload {
-            params: {};
+            params: {}
         }
 
         export interface IGetApodResponse
@@ -32,4 +35,4 @@ declare namespace IHomePage {
     }
 }
 
-export { IHomePage };
+export { IHomePage }

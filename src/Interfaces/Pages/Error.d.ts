@@ -1,15 +1,15 @@
 // #region Global Imports
-import { WithTranslation } from "next-i18next";
+import { WithTranslation } from 'next-i18next'
 // #endregion Global Imports
 
 declare namespace IErrorPage {
     export interface IProps extends WithTranslation {
-        statusCode?: number;
+        statusCode?: number
     }
 
     export interface InitialProps {
-        namespacesRequired: string[];
+        namespacesRequired: string[]
     }
 }
 
-export { IErrorPage };
+export { IErrorPage }
