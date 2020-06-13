@@ -10,9 +10,6 @@ const INITIAL_STATE: IHomePage.IStateProps = {
     home: {
         version: 1,
     },
-    nevim: {
-        bomba: 'ahoj',
-    },
     image: {
         url: '',
     },

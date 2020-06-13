@@ -13,9 +13,6 @@ declare namespace IHomePage {
         home: {
             version: number
         }
-        nevim: {
-            bomba: String
-        }
         image: {
             url: string
         }

@@ -29,7 +29,6 @@ export const PlanetaryService = {
                 url: '',
             }
         }
-
         return response
     },
 }

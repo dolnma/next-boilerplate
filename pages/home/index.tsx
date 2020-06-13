@@ -45,7 +45,10 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 
     return (
         <Container>
-            <Navbar />
+            <Navbar
+                link={[{ id: 1, name: 'super' }, { id: 2, name: 'bezva' }]}
+                menu="blbost"
+            />
             <Top>
                 <img src="/images/pankod-logo.png" alt="Pankod Logo" />
             </Top>
@@ -86,7 +89,6 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 Home.getInitialProps = async (
     ctx: ReduxNextPageContext
 ): Promise<IHomePage.InitialProps> => {
-    console.log(ctx.store.getState())
     await ctx.store.dispatch(
         HomeActions.GetApod({
             params: { hd: true },
